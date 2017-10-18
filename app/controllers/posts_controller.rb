@@ -1,0 +1,13 @@
+class PostsController < ApplicationController
+  def index
+  	@posts = Post.all
+  end
+
+  def show
+  	@post = Post.find_by(id: params[:id]) #idカラムがparams[:id]である投稿データを取得している	
+  end	
+
+  def new
+  	
+  end
+end

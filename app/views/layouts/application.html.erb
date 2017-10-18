@@ -9,6 +9,27 @@
   </head>
 
   <body>
+  	<header>
+	<div class="header-logo">
+	  <%=link_to "Let's Tweet", root_path %>
+	</div>
+	<ul class="header-menus">
+		<ol>
+		<%= link_to "About this app", about_path %>	    
+		</ol>
+		<ol>
+		<%= link_to "Index", posts_path %>
+		</ol>
+		<ol>
+		<%= link_to "POST", new_post_path %>	
+		</ol>
+
+		<ol>
+		Edit
+	    </ol>
+	</ul>
+
+</header>
     <%= yield %>
   </body>
 </html>

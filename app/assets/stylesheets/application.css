@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+body {
+	background: #FAFAD2;
+}
+.header-logo{
+	color: #FFA500;
+	float: left;
+	font-size: 24px;
+	padding-left: 32px;
+	padding-top: 24px;
+}
+
+.header-menus {
+	color: #FFA500;
+	float: right; 
+	padding-right: 40px;
+}
+
+.header-menus li {
+	float: left;
+	padding-left: 40px;
+	
+}
+
+.main {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 68px;
+}
+.top-main {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	padding: 200px 0 100px;
+
+}
+
+
