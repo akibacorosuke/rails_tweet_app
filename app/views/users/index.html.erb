@@ -1,0 +1,11 @@
+<div class="main-users-index">
+	<div class="container">
+	    <% @users.each do |user| %>
+	     <div class="users-index-item">
+	     <img src="<%= "/user_images/#{user.image_name}" %>">
+	     <%= link_to user.name, user_path(user)%>
+
+	     </div>
+	    <% end %>
+	</div>
+</div> 

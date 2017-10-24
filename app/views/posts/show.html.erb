@@ -1,9 +1,37 @@
+<div class="container">
+  
+	<img src="<%= "/user_images/#{@user.image_name}"%>">
+	<%= link_to(@user.name, "/users/#{@user.id}") %> 
+	<p>
+		<%= @post.content %>
+	</p>
 
-<p>
-	<%= @post.content %>
-</p>
+	<p>
+		<%= @post.created_at %>
+	</p>
+	<% if Like.find_by(user_id:@current_user.id, post_id:@post.id) %><!--2つのデータがあるとき-->
+		  <%= link_to( "/likes/#{@post.id}/destroy", {method: "post"})do %>
+		    <span class="fa fa-heart like-btn-unlike"></span>
+		  <% end %>
+	<% else %>
+		 <%= link_to("/likes/#{@post.id}/create",{method: "post"})do %>
+		    <span class="fa fa-heart like-btn"></span>
+		 <% end %>
+	<% end %>
 
-<p>
-	<%= @post.created_at %>
+    <%= @likes_count %>
 
-</p>
+	<% if @post.user_id == @current_user.id %><!--投稿者だけが編集できるようにする-->
+		<div class="post-menus">
+			<ul>
+				<li>
+					<%= link_to "EDIT", edit_post_path %>
+				</li>
+				<li>
+					<%= link_to("DELETE","/posts/#{@post.id}", method: :delete, data: {confirm: "Are you sure?"})%>
+				</li>
+
+			</ul>
+		</div>
+	<% end %>
+</div>

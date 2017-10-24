@@ -13,14 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+	font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+    letter-spacing: 0.6px;
+
+}
 body {
 	background: #FAFAD2;
 }
+
+a {
+	text-decoration: none;
+	color: #66CDAA;
+}
+
 .header-logo{
 	color: #FFA500;
 	float: left;
-	font-size: 24px;
-	padding-left: 32px;
+	font-size: 30px;
+	padding-left: 36px;
 	padding-top: 24px;
 }
 
@@ -28,11 +40,13 @@ body {
 	color: #FFA500;
 	float: right; 
 	padding-right: 40px;
+	padding-top: 10px;
 }
 
-.header-menus li {
+.header-menus ol {
 	float: left;
 	padding-left: 40px;
+	font-size: 18px;
 	
 }
 
@@ -49,7 +63,38 @@ body {
 	position: absolute;
 	top: 0;
 	padding: 200px 0 100px;
+}
+.user-show {
+	text-align: center;
+}
+
+.flash-notice {
+	color: red;
+	text-align: center;
+	background: #DB7093;
+	top: 40px;
+	width: 100%;
+	padding: 30px 0;
 
 }
 
 
+.like-btn {
+	color: #8899a6;
+}
+
+.like-btn-unlike {
+	color: #ff2581;
+}
+
+textarea {
+	font-size:15px;
+	padding:40px;
+}
+
+.posts-index-item {
+  padding: 20px 30px;
+  background-color: #E0FFFF;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}

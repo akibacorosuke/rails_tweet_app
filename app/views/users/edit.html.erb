@@ -1,0 +1,20 @@
+<% @user.errors.full_messages.each do |message| %>
+            <div class="form-error"> 
+              <%= message %> 
+              <%#updateアクションのsaveメソッドを呼び出した際にvalidationに失敗すると自動的にメッセージが生成される%>
+            </div>
+<% end %>
+
+
+<%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+      
+          <p>User Name</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>email address</p>
+          <input name="email" value="<%= @user.email %>">
+          <p>picture</p>
+          <input type="file" name="image">
+          <input type="submit" value="submit">
+        
+<% end %>
+<!-- 画像の送信は特殊なので、form_tagに{multipart: true}を追加する -->
