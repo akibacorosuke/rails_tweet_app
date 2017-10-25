@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  #protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
   #全てのコントローラで共通する処理はapplicationコントローラにまとめることができる。
   #set_current_userメソッドを定義する
   before_action :set_current_user #set_current_userメソッドが各コントローラーで実行される

@@ -1,32 +1,20 @@
 	
 <div class="user-show">
-	<p>About user</p>
+	
 	<p><img src="<%= "/user_images/#{@user.image_name}"%>">
 		<!--#画像はpublic/user_imagesフォルダに保存されているので、src属性の値は「/user_images/ファイル名」とする必要がある --></p>
-	<h2><%= @user.name %></h2>
-	<p><%= @user.id %></p>
-	<p><%= @user.email %></p>
+	<h2>username: <%= @user.name %></h2>
+	<p>user.id: <%= @user.id %></p>
+	<p>user.email: <%= @user.email %></p>
 
 	<% if @user.id == @current_user.id %> <!--詳細ページのユーザーのidとログイン中のユーザーのidが等しい場合 -->
 	 <%= link_to("edit","/users/#{@user.id}/edit")%>
 	<% end %>
 
 	<ul class="user-tabs">
-	      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-	      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+	      <li><%= link_to("see what you liked", "/users/#{@user.id}/likes") %></li>
 	</ul>
-
-	<% @user.posts.each do |post|%> <!--ユーザーが作成した投稿が表示される -->
-	      <div class="posts-index-item">
-	        <div class="post-left">
-	          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-	        </div>
-	        <div class="post-right">
-	          <div class="post-user-name">
-	            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
-	          </div>
-	          <%= link_to(post.content, "/posts/#{post.id}") %>
-	        </div>
-	      </div>
-	<% end %>
+    
+	
 </div>
+

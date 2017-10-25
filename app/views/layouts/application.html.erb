@@ -14,9 +14,9 @@
 	<div class="header-logo">
 	  <% if @current_user %>
           <%= link_to "Let's Tweet", posts_path %>
-        <% else %>
+      <% else %>
           <%= link_to "Let's Tweet", root_path %>
-        <% end %>
+      <% end %>
 	</div>
 	<ul class="header-menus">
 		<% if @current_user %> <!-- session[:user_id]-->
